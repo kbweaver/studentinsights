@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404162153) do
+ActiveRecord::Schema.define(version: 20160406012554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -283,6 +283,7 @@ ActiveRecord::Schema.define(version: 20160404162153) do
     t.integer  "most_recent_star_reading_percentile"
     t.integer  "most_recent_star_math_percentile"
     t.string   "enrollment_status"
+    t.datetime "date_of_birth"
   end
 
   add_index "students", ["homeroom_id"], name: "index_students_on_homeroom_id", using: :btree
