@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
       notes: student.student_notes.map { |note| serialize_student_note(note) },
       feed: student_feed(student),
       chart_data: chart_data,
-      dibels: student.student_assessments.by_family('DIBELS'),
+      dibels: student.student_assessments.by_family('DIBELS').select {|dibels| !dibels.performance_level.nil? },
       intervention_types_index: intervention_types_index,
       service_types_index: service_types_index,
       event_note_types_index: event_note_types_index,
